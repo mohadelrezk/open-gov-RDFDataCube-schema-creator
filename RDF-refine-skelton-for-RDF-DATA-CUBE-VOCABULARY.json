@@ -1,0 +1,388 @@
+[
+  {
+    "op": "rdf-extension/save-rdf-schema",
+    "description": "Save RDF schema skeleton",
+    "schema": {
+      "baseUri": "http://www.opengovintelligence.eu/pilots#",
+      "prefixes": [
+        {
+          "name": "dccs",
+          "uri": "http://data.gmdsp.org.uk/data/example/stats/dccs/"
+        },
+        {
+          "name": "owl",
+          "uri": "http://www.w3.org/2002/07/owl#"
+        },
+        {
+          "name": "xsd",
+          "uri": "http://www.w3.org/2001/XMLSchema#"
+        },
+        {
+          "name": "skos",
+          "uri": "http://www.w3.org/2004/02/skos/core#"
+        },
+        {
+          "name": "rdfs",
+          "uri": "http://www.w3.org/2000/01/rdf-schema#"
+        },
+        {
+          "name": "ds",
+          "uri": "http://data.gmdsp.org.uk/data/example/stats/dataset/"
+        },
+        {
+          "name": "ogi",
+          "uri": "http://www.opengovintelligence.eu/pilots#"
+        },
+        {
+          "name": "qb",
+          "uri": "http://purl.org/linked-data/cube#"
+        },
+        {
+          "name": "dct",
+          "uri": "http://purl.org/dc/terms/"
+        },
+        {
+          "name": "prop",
+          "uri": "http://data.gmdsp.org.uk/data/example/stats/prop/"
+        },
+        {
+          "name": "sdmx-concept",
+          "uri": "http://purl.org/linked-data/sdmx/2009/concept#"
+        },
+        {
+          "name": "dcterms",
+          "uri": "http://purl.org/dc/terms/"
+        },
+        {
+          "name": "scovo",
+          "uri": "http://purl.org/NET/scovo#"
+        },
+        {
+          "name": "sdmx-attribute",
+          "uri": "http://purl.org/linked-data/sdmx/2009/attribute#"
+        },
+        {
+          "name": "prov",
+          "uri": "http://www.w3.org/ns/prov#"
+        },
+        {
+          "name": "admingeo",
+          "uri": "http://data.ordnancesurvey.co.uk/ontology/admingeo/"
+        },
+        {
+          "name": "sdmx-dimension",
+          "uri": "http://purl.org/linked-data/sdmx/2009/dimension#"
+        },
+        {
+          "name": "sdmx-subject",
+          "uri": "http://purl.org/linked-data/sdmx/2009/subject#"
+        },
+        {
+          "name": "sdmx-metadata",
+          "uri": "http://purl.org/linked-data/sdmx/2009/metadata#"
+        },
+        {
+          "name": "void",
+          "uri": "http://rdfs.org/ns/void#"
+        },
+        {
+          "name": "dbpedia-owl",
+          "uri": "http://dbpedia.org/ontology/"
+        },
+        {
+          "name": "org",
+          "uri": "http://www.w3.org/ns/org#"
+        },
+        {
+          "name": "sdmx-measure",
+          "uri": "http://purl.org/linked-data/sdmx/2009/measure#"
+        },
+        {
+          "name": "rdf",
+          "uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+        },
+        {
+          "name": "sdmx-code",
+          "uri": "http://purl.org/linked-data/sdmx/2009/code#"
+        },
+        {
+          "name": "interval",
+          "uri": "http://reference.data.gov.uk/def/intervals/"
+        }
+      ],
+      "rootNodes": [
+        {
+          "nodeType": "cell-as-resource",
+          "expression": "value",
+          "isRowNumberCell": false,
+          "columnName": "Name",
+          "rdfTypes": [
+            {
+              "uri": "http://purl.org/linked-data/cube#ComponentProperty",
+              "curie": "qb:ComponentProperty"
+            }
+          ],
+          "links": [
+            {
+              "uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+              "curie": "rdf:type",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "type",
+                "rdfTypes": [],
+                "links": []
+              }
+            },
+            {
+              "uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+              "curie": "rdf:type",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "Domain_Matching_URI",
+                "rdfTypes": [],
+                "links": []
+              }
+            },
+            {
+              "uri": "http://www.w3.org/2000/01/rdf-schema#label",
+              "curie": "rdfs:label",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "lang": "en",
+                "columnName": "Desired_Label"
+              }
+            },
+            {
+              "uri": "http://www.w3.org/2000/01/rdf-schema#comment",
+              "curie": "rdfs:comment",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "lang": "en",
+                "columnName": "Comment"
+              }
+            },
+            {
+              "uri": "http://purl.org/linked-data/cube#concept",
+              "curie": "qb:concept",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "Related Concept",
+                "rdfTypes": [],
+                "links": []
+              }
+            },
+            {
+              "uri": "http://www.w3.org/2000/01/rdf-schema#range",
+              "curie": "rdfs:range",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "Data Type_range",
+                "rdfTypes": [],
+                "links": []
+              }
+            }
+          ]
+        },
+        {
+          "nodeType": "cell-as-resource",
+          "expression": "value",
+          "isRowNumberCell": false,
+          "columnName": "DSD Name",
+          "rdfTypes": [
+            {
+              "uri": "http://purl.org/linked-data/cube#DataStructureDefinition",
+              "curie": "qb:DataStructureDefinition"
+            }
+          ],
+          "links": [
+            {
+              "uri": "http://purl.org/linked-data/cube#component",
+              "curie": "qb:component",
+              "target": {
+                "nodeType": "cell-as-blank",
+                "isRowNumberCell": true,
+                "rdfTypes": [],
+                "links": [
+                  {
+                    "uri": "http://purl.org/linked-data/cube#dimension",
+                    "curie": "qb:dimension",
+                    "target": {
+                      "nodeType": "cell-as-resource",
+                      "expression": "value",
+                      "isRowNumberCell": false,
+                      "columnName": "Dimension Component",
+                      "rdfTypes": [],
+                      "links": []
+                    }
+                  },
+                  {
+                    "uri": "http://purl.org/linked-data/cube#measure",
+                    "curie": "qb:measure",
+                    "target": {
+                      "nodeType": "cell-as-resource",
+                      "expression": "value",
+                      "isRowNumberCell": false,
+                      "columnName": "Measure Component",
+                      "rdfTypes": [],
+                      "links": []
+                    }
+                  },
+                  {
+                    "uri": "http://purl.org/linked-data/cube#attribute",
+                    "curie": "qb:attribute",
+                    "target": {
+                      "nodeType": "cell-as-resource",
+                      "expression": "value",
+                      "isRowNumberCell": false,
+                      "columnName": "Attribute Component",
+                      "rdfTypes": [],
+                      "links": []
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "nodeType": "cell-as-resource",
+          "expression": "value",
+          "isRowNumberCell": false,
+          "columnName": "Name2",
+          "rdfTypes": [
+            {
+              "uri": "http://purl.org/linked-data/cube#DataSet",
+              "curie": "qb:DataSet"
+            }
+          ],
+          "links": [
+            {
+              "uri": "http://www.w3.org/2000/01/rdf-schema#label",
+              "curie": "rdfs:label",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "lang": "en",
+                "columnName": "Desired_Label2"
+              }
+            },
+            {
+              "uri": "http://www.w3.org/2000/01/rdf-schema#comment",
+              "curie": "rdfs:comment",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "lang": "en",
+                "columnName": "Comment2"
+              }
+            },
+            {
+              "uri": "http://purl.org/dc/terms/description",
+              "curie": "dct:description",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "lang": "en",
+                "columnName": "Description"
+              }
+            },
+            {
+              "uri": "http://purl.org/dc/terms/publisher",
+              "curie": "dct:publisher",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "Publisher",
+                "rdfTypes": [],
+                "links": []
+              }
+            },
+            {
+              "uri": "http://purl.org/dc/terms/subject",
+              "curie": "dct:subject",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "Subject_URI",
+                "rdfTypes": [],
+                "links": []
+              }
+            },
+            {
+              "uri": "http://purl.org/linked-data/cube#structure",
+              "curie": "qb:structure",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "Data Structure Definition",
+                "rdfTypes": [],
+                "links": []
+              }
+            },
+            {
+              "uri": "http://dbpedia.org/ontology/organisation",
+              "curie": "dbpedia-owl:organisation",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "Organization_URI",
+                "rdfTypes": [],
+                "links": []
+              }
+            },
+            {
+              "uri": "http://dbpedia.org/ontology/location",
+              "curie": "dbpedia-owl:location",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "Location_URI",
+                "rdfTypes": [],
+                "links": []
+              }
+            }
+          ]
+        },
+        {
+          "nodeType": "cell-as-resource",
+          "expression": "value",
+          "isRowNumberCell": false,
+          "columnName": "Desired Element Name for URI",
+          "rdfTypes": [],
+          "links": [
+            {
+              "uri": "http://dbpedia.org/ontology/originalName",
+              "curie": "dbpedia-owl:originalName",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "Source Element Name"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+]

@@ -1,0 +1,191 @@
+@prefix dccs: <http://data.gmdsp.org.uk/data/example/stats/dccs/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ds: <http://data.gmdsp.org.uk/data/example/stats/dataset/> .
+@prefix ogi: <http://www.opengovintelligence.eu/pilots#> .
+@prefix qb: <http://purl.org/linked-data/cube#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix prop: <http://data.gmdsp.org.uk/data/example/stats/prop/> .
+@prefix sdmx-concept: <http://purl.org/linked-data/sdmx/2009/concept#> .
+@prefix scovo: <http://purl.org/NET/scovo#> .
+@prefix sdmx-attribute: <http://purl.org/linked-data/sdmx/2009/attribute#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix admingeo: <http://data.ordnancesurvey.co.uk/ontology/admingeo/> .
+@prefix sdmx-dimension: <http://purl.org/linked-data/sdmx/2009/dimension#> .
+@prefix sdmx-subject: <http://purl.org/linked-data/sdmx/2009/subject#> .
+@prefix sdmx-metadata: <http://purl.org/linked-data/sdmx/2009/metadata#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix dbpedia-owl: <http://dbpedia.org/ontology/> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix sdmx-measure: <http://purl.org/linked-data/sdmx/2009/measure#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sdmx-code: <http://purl.org/linked-data/sdmx/2009/code#> .
+@prefix interval: <http://reference.data.gov.uk/def/intervals/> .
+
+
+ogi:buoy_id a qb:ComponentProperty , qb:DimensionProperty , <http://www.w3.org/ns/ssn/Device> ;
+	rdfs:label "Buoy ID"@en ;
+	rdfs:comment "Sensor measuring observations."@en ;
+	rdfs:range xsd:string .
+
+ogi:IWaveBNetwork_zerocrossing_dsd a qb:DataStructureDefinition .
+
+_:node1bmhat75ox1 qb:dimension ogi:buoy_id .
+
+ogi:IWaveBNetwork_zerocrossing_dsd qb:component _:node1bmhat75ox1 .
+
+ogi:IWaveBNetwork_zerocrossing_ds a qb:DataSet ;
+	rdfs:label "Irish Wave Buoy Network Zero Crossing"@en ;
+	rdfs:comment "Wave data monitoring infrastructure for ocean energy research and development."@en ;
+	dct:description "http://www.isde.ie/#/55eb27e0-2fc3-4dab-9963-a99d12402a9e"@en ;
+	dct:publisher <http://dbpedia.org/resource/Marine_Institute_Ireland> ;
+	dct:subject <http://www.eionet.europa.eu/gemet/concept/5797> ;
+	qb:structure ogi:IWaveBNetwork_zerocrossing_dsd ;
+	dbpedia-owl:organisation <http://dbpedia.org/resource/Marine_Institute_Ireland> ;
+	dbpedia-owl:location <http://dbpedia.org/resource/Atlantic_Ocean> .
+
+ogi:buoy_id dbpedia-owl:originalName "buoy_id" .
+
+ogi:latitude a qb:ComponentProperty , qb:DimensionProperty , <http://www.w3.org/2003/01/geo/wgs84_pos#lat> ;
+	rdfs:label "Latitude"@en ;
+	rdfs:range xsd:decimal .
+
+_:node1bmhat75ox2 qb:dimension ogi:latitude .
+
+ogi:IWaveBNetwork_zerocrossing_dsd qb:component _:node1bmhat75ox2 .
+
+ogi:IWaveBNetwork_zerocrossing_ds dct:publisher <http://dbpedia.org/resource/NUI_Galway> ;
+	dct:subject <http://www.eionet.europa.eu/gemet/concept/12586> ;
+	dbpedia-owl:organisation <http://dbpedia.org/resource/NUI_Galway> ;
+	dbpedia-owl:location <http://dbpedia.org/resource/North_Atlantic_(disambiguation)> .
+
+ogi:time dbpedia-owl:originalName "time" .
+
+ogi:latitude a <http://vocab.nerc.ac.uk/collection/P07/current/CFSN0600/> .
+
+_:node1bmhat75ox3 qb:dimension ogi:longitude .
+
+ogi:IWaveBNetwork_zerocrossing_dsd qb:component _:node1bmhat75ox3 .
+
+ogi:IWaveBNetwork_zerocrossing_ds dct:subject <http://www.eionet.europa.eu/gemet/concept/2712> ;
+	dbpedia-owl:organisation <http://dbpedia.org/resource/Department_of_Agriculture%2C_Food_and_the_Marine> ;
+	dbpedia-owl:location <http://www.eionet.europa.eu/gemet/concept/5694> .
+
+ogi:latitude dbpedia-owl:originalName "latitude" .
+
+ogi:longitude a qb:ComponentProperty , qb:DimensionProperty , <http://www.w3.org/2003/01/geo/wgs84_pos#long> ;
+	rdfs:label "Longitude"@en ;
+	rdfs:range xsd:decimal .
+
+_:node1bmhat75ox4 qb:dimension ogi:station_id .
+
+ogi:IWaveBNetwork_zerocrossing_dsd qb:component _:node1bmhat75ox4 .
+
+ogi:IWaveBNetwork_zerocrossing_ds dct:subject <http://www.eionet.europa.eu/gemet/concept/5668> ;
+	dbpedia-owl:organisation <http://dbpedia.org/resource/Department_of_Communications,_Climate_Action_and_Environment> ;
+	dbpedia-owl:location <http://sws.geonames.org/3411923/> .
+
+ogi:longitude dbpedia-owl:originalName "longitude" ;
+	a <http://vocab.nerc.ac.uk/collection/P07/current/CFSN0554> .
+
+_:node1bmhat75ox5 qb:dimension ogi:time .
+
+ogi:IWaveBNetwork_zerocrossing_dsd qb:component _:node1bmhat75ox5 .
+
+ogi:IWaveBNetwork_zerocrossing_ds dct:subject <http://www.eionet.europa.eu/gemet/concept/5677> ;
+	dbpedia-owl:organisation <http://iweda.ie/> ;
+	dbpedia-owl:location <http://sws.geonames.org/6295630/> .
+
+ogi:station_id dbpedia-owl:originalName "station_id" ;
+	a qb:ComponentProperty , qb:DimensionProperty , <http://vocab.nerc.ac.uk/collection/W02/current/005/> ;
+	rdfs:label "Station"@en ;
+	rdfs:range xsd:string .
+
+_:node1bmhat75ox6 qb:measure ogi:Hmax .
+
+ogi:IWaveBNetwork_zerocrossing_dsd qb:component _:node1bmhat75ox6 .
+
+ogi:IWaveBNetwork_zerocrossing_ds dct:subject <http://www.eionet.europa.eu/gemet/concept/7107> ;
+	dbpedia-owl:organisation <http://www.mria.ie/> ;
+	dbpedia-owl:location <http://vocab.nerc.ac.uk/collection/C16/current/200/> .
+
+ogi:Hmax dbpedia-owl:originalName "Hmax" ;
+	a qb:ComponentProperty , qb:MeasureProperty ;
+	rdfs:label "H Max"@en ;
+	rdfs:range xsd:decimal .
+
+_:node1bmhat75ox7 qb:measure ogi:HmaxPeriod .
+
+ogi:IWaveBNetwork_zerocrossing_dsd qb:component _:node1bmhat75ox7 .
+
+ogi:IWaveBNetwork_zerocrossing_ds dct:subject <http://dbpedia.org/resource/Marine_energy> ;
+	dbpedia-owl:organisation <http://www.seai.ie/> ;
+	dbpedia-owl:location <http://vocab.nerc.ac.uk/collection/C16/current/23/> .
+
+ogi:HmaxPeriod dbpedia-owl:originalName "HmaxPeriod" ;
+	a qb:ComponentProperty , qb:MeasureProperty ;
+	rdfs:label "H Max Period"@en ;
+	rdfs:range xsd:decimal .
+
+_:node1bmhat75ox8 qb:measure ogi:Havg .
+
+ogi:IWaveBNetwork_zerocrossing_dsd qb:component _:node1bmhat75ox8 .
+
+ogi:IWaveBNetwork_zerocrossing_ds dct:subject <http://www.eionet.europa.eu/gemet/concept/9259> ;
+	dbpedia-owl:location <http://vocab.nerc.ac.uk/collection/C16/current/23a/> .
+
+ogi:Havg dbpedia-owl:originalName "Havg" ;
+	a qb:ComponentProperty , qb:MeasureProperty ;
+	rdfs:label "H Average"@en ;
+	rdfs:range xsd:decimal .
+
+_:node1bmhat75ox9 qb:measure ogi:Tavg .
+
+ogi:IWaveBNetwork_zerocrossing_dsd qb:component _:node1bmhat75ox9 .
+
+ogi:IWaveBNetwork_zerocrossing_ds dct:subject <http://dbpedia.org/resource/Wave_power> ;
+	dbpedia-owl:location <http://sws.geonames.org/2964178> .
+
+ogi:Tavg dbpedia-owl:originalName "Tavg" ;
+	a qb:ComponentProperty , qb:MeasureProperty ;
+	rdfs:label "T Average"@en ;
+	rdfs:range xsd:decimal .
+
+_:node1bmhat75ox10 qb:measure ogi:qcflag .
+
+ogi:IWaveBNetwork_zerocrossing_dsd qb:component _:node1bmhat75ox10 .
+
+ogi:IWaveBNetwork_zerocrossing_ds dct:subject <http://www.eionet.europa.eu/gemet/concept/2738> ;
+	dbpedia-owl:location <http://dbpedia.org/resource/Galway_Bay> .
+
+ogi:qcflag dbpedia-owl:originalName "qcflag" .
+
+ogi:time a qb:ComponentProperty , qb:DimensionProperty , <http://purl.oclc.org/NET/ssnx/ssn#observationResultTime> ;
+	rdfs:label "Time"@en ;
+	rdfs:range xsd:time .
+
+ogi:IWaveBNetwork_zerocrossing_ds dct:subject <http://www.eionet.europa.eu/gemet/concept/2718> ;
+	dbpedia-owl:location <https://www.logainm.ie/xml/1165961> .
+
+ogi:qcflag a qb:ComponentProperty , qb:MeasureProperty , <https://www.w3.org/2005/Incubator/ssn/ssnx/ssn#qualityOfObservation> ;
+	rdfs:label "Quality Control Flag"@en ;
+	rdfs:range xsd:int .
+
+ogi:IWaveBNetwork_zerocrossing_ds dct:subject <http://www.eionet.europa.eu/gemet/concept/2601> ;
+	dbpedia-owl:location <https://www.logainm.ie/xml/100015> ;
+	dct:subject <http://www.eionet.europa.eu/gemet/concept/2747> ;
+	dbpedia-owl:location <http://data.geohive.ie/resource/county/2AE19629145313A3E055000000000001> ;
+	dct:subject <http://www.eionet.europa.eu/gemet/concept/2748> ;
+	dbpedia-owl:location <http://dbpedia.org/resource/County_Galway> ;
+	dct:subject <http://www.eionet.europa.eu/gemet/concept/13213> ;
+	dbpedia-owl:location <http://sws.geonames.org/2961388> ;
+	dct:subject <http://www.eionet.europa.eu/gemet/concept/7525> ;
+	dbpedia-owl:location <http://dbpedia.org/resource/An_Spideal> ;
+	dct:subject <http://www.eionet.europa.eu/gemet/concept/12171> ;
+	dbpedia-owl:location <https://www.logainm.ie/xml/18722> ;
+	dct:subject <http://www.eionet.europa.eu/gemet/concept/7495> ;
+	dbpedia-owl:location <http://sws.geonames.org/2962152/> ;
+	dct:subject <http://www.eionet.europa.eu/gemet/concept/11958> ;
+	dbpedia-owl:location <https://www.logainm.ie/xml/1411139> .

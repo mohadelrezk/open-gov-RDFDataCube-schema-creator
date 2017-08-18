@@ -1,0 +1,85 @@
+@prefix dccs: <http://data.gmdsp.org.uk/data/example/stats/dccs/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ds: <http://data.gmdsp.org.uk/data/example/stats/dataset/> .
+@prefix ogi: <http://www.opengovintelligence.eu/pilots#> .
+@prefix qb: <http://purl.org/linked-data/cube#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix prop: <http://data.gmdsp.org.uk/data/example/stats/prop/> .
+@prefix sdmx-concept: <http://purl.org/linked-data/sdmx/2009/concept#> .
+@prefix scovo: <http://purl.org/NET/scovo#> .
+@prefix sdmx-attribute: <http://purl.org/linked-data/sdmx/2009/attribute#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix admingeo: <http://data.ordnancesurvey.co.uk/ontology/admingeo/> .
+@prefix sdmx-dimension: <http://purl.org/linked-data/sdmx/2009/dimension#> .
+@prefix sdmx-subject: <http://purl.org/linked-data/sdmx/2009/subject#> .
+@prefix sdmx-metadata: <http://purl.org/linked-data/sdmx/2009/metadata#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix dbpedia-owl: <http://dbpedia.org/ontology/> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix sdmx-measure: <http://purl.org/linked-data/sdmx/2009/measure#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sdmx-code: <http://purl.org/linked-data/sdmx/2009/code#> .
+@prefix interval: <http://reference.data.gov.uk/def/intervals/> .
+
+
+ogi:refPeriod a qb:ComponentProperty , qb:DimensionProperty , sdmx-dimension:refPeriod ;
+	rdfs:label "Period"@en ;
+	rdfs:range xsd:gYear .
+
+ogi:FDIEY_dsd a qb:DataStructureDefinition .
+
+_:node1bmhbgvaix1 qb:dimension ogi:refPeriod .
+
+ogi:FDIEY_dsd qb:component _:node1bmhbgvaix1 .
+
+ogi:FDIEY_ds a qb:DataSet ;
+	rdfs:label "LT:Foreign Direct Investment per Capita at End of the Year"@en ;
+	dct:publisher <http://dbpedia.org/page/Enterprise_Lithuania> ;
+	qb:structure ogi:FDIEY_dsd ;
+	dbpedia-owl:organisation <http://dbpedia.org/page/Enterprise_Lithuania> ;
+	dbpedia-owl:location <http://dbpedia.org/page/Lithuania> .
+
+ogi:refPeriod dbpedia-owl:originalName "Time_period" .
+
+ogi:country-name a qb:ComponentProperty , qb:DimensionProperty , <http://www.w3.org/2006/vcard/ns#country-name> ;
+	rdfs:label "Country"@en ;
+	rdfs:range xsd:string .
+
+_:node1bmhbgvaix2 qb:dimension ogi:country-name .
+
+ogi:FDIEY_dsd qb:component _:node1bmhbgvaix2 .
+
+ogi:country-name dbpedia-owl:originalName "Country" .
+
+ogi:county a qb:ComponentProperty , qb:DimensionProperty , <http://www.wikipediaontology.org/infobox/county> ;
+	rdfs:label "County"@en ;
+	rdfs:range xsd:string .
+
+_:node1bmhbgvaix3 qb:dimension ogi:county .
+
+ogi:FDIEY_dsd qb:component _:node1bmhbgvaix3 .
+
+ogi:county dbpedia-owl:originalName "County" .
+
+ogi:municipality a qb:ComponentProperty , qb:DimensionProperty , <http://id.dbpedia.org/property/municipality> ;
+	rdfs:label "Municipality"@en ;
+	rdfs:range xsd:string .
+
+_:node1bmhbgvaix4 qb:dimension ogi:municipality .
+
+ogi:FDIEY_dsd qb:component _:node1bmhbgvaix4 .
+
+ogi:municipality dbpedia-owl:originalName "Municipality" .
+
+ogi:foreign_direct_investment_per_capita_at_the_end_of_the_year a qb:ComponentProperty , qb:MeasureProperty ;
+	rdfs:label "Foreign Direct Investment per Capita at End of the Year"@en ;
+	rdfs:range xsd:decimal .
+
+_:node1bmhbgvaix5 qb:measure ogi:foreign_direct_investment_per_capita_at_the_end_of_the_year .
+
+ogi:FDIEY_dsd qb:component _:node1bmhbgvaix5 .
+
+ogi:foreign_direct_investment_per_capita_at_the_end_of_the_year dbpedia-owl:originalName "Foreign_direct_investment_per_capita_at_the_end_of_the_year_EUR" .

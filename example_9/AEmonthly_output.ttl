@@ -1,0 +1,94 @@
+@prefix dccs: <http://data.gmdsp.org.uk/data/example/stats/dccs/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ds: <http://data.gmdsp.org.uk/data/example/stats/dataset/> .
+@prefix ogi: <http://www.opengovintelligence.eu/pilots#> .
+@prefix qb: <http://purl.org/linked-data/cube#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix prop: <http://data.gmdsp.org.uk/data/example/stats/prop/> .
+@prefix sdmx-concept: <http://purl.org/linked-data/sdmx/2009/concept#> .
+@prefix scovo: <http://purl.org/NET/scovo#> .
+@prefix sdmx-attribute: <http://purl.org/linked-data/sdmx/2009/attribute#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix admingeo: <http://data.ordnancesurvey.co.uk/ontology/admingeo/> .
+@prefix sdmx-dimension: <http://purl.org/linked-data/sdmx/2009/dimension#> .
+@prefix sdmx-subject: <http://purl.org/linked-data/sdmx/2009/subject#> .
+@prefix sdmx-metadata: <http://purl.org/linked-data/sdmx/2009/metadata#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix dbpedia-owl: <http://dbpedia.org/ontology/> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix sdmx-measure: <http://purl.org/linked-data/sdmx/2009/measure#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sdmx-code: <http://purl.org/linked-data/sdmx/2009/code#> .
+@prefix interval: <http://reference.data.gov.uk/def/intervals/> .
+
+
+ogi:refPeriod a qb:ComponentProperty , qb:DimensionProperty , sdmx-dimension:refPeriod ;
+	rdfs:label "Period"@en ;
+	rdfs:range xsd:gYear .
+
+ogi:AEmonthly_dsd a qb:DataStructureDefinition .
+
+_:node1bmhbsnhsx1 qb:dimension ogi:refPeriod .
+
+ogi:AEmonthly_dsd qb:component _:node1bmhbsnhsx1 .
+
+ogi:AEmonthly_ds a qb:DataSet ;
+	rdfs:label "LT:Average Earnings Monthly"@en ;
+	dct:publisher <http://dbpedia.org/page/Enterprise_Lithuania> ;
+	qb:structure ogi:AEmonthly_dsd ;
+	dbpedia-owl:organisation <http://dbpedia.org/page/Enterprise_Lithuania> ;
+	dbpedia-owl:location <http://dbpedia.org/page/Lithuania> .
+
+ogi:refPeriod dbpedia-owl:originalName "Time_period" .
+
+ogi:country-name a qb:ComponentProperty , qb:DimensionProperty , <http://www.w3.org/2006/vcard/ns#country-name> ;
+	rdfs:label "Country"@en ;
+	rdfs:range xsd:string .
+
+_:node1bmhbsnhsx2 qb:dimension ogi:country-name .
+
+ogi:AEmonthly_dsd qb:component _:node1bmhbsnhsx2 .
+
+ogi:country-name dbpedia-owl:originalName "Country" .
+
+ogi:county a qb:ComponentProperty , qb:DimensionProperty , <http://www.wikipediaontology.org/infobox/county> ;
+	rdfs:label "County"@en ;
+	rdfs:range xsd:string .
+
+_:node1bmhbsnhsx3 qb:dimension ogi:county .
+
+ogi:AEmonthly_dsd qb:component _:node1bmhbsnhsx3 .
+
+ogi:county dbpedia-owl:originalName "County" .
+
+ogi:municipality a qb:ComponentProperty , qb:DimensionProperty , <http://id.dbpedia.org/property/municipality> ;
+	rdfs:label "Municipality"@en ;
+	rdfs:range xsd:string .
+
+_:node1bmhbsnhsx4 qb:dimension ogi:municipality .
+
+ogi:AEmonthly_dsd qb:component _:node1bmhbsnhsx4 .
+
+ogi:municipality dbpedia-owl:originalName "Municipality" .
+
+ogi:average_earnings_monthly a qb:ComponentProperty , qb:MeasureProperty ;
+	rdfs:label "Average Earnings Monthly"@en ;
+	rdfs:range xsd:decimal .
+
+_:node1bmhbsnhsx5 qb:measure ogi:average_earnings_monthly .
+
+ogi:AEmonthly_dsd qb:component _:node1bmhbsnhsx5 .
+
+ogi:type dbpedia-owl:originalName "Type" ;
+	a qb:ComponentProperty , qb:DimensionProperty ;
+	rdfs:label "Earninigs Type"@en ;
+	rdfs:range xsd:string .
+
+_:node1bmhbsnhsx6 qb:dimension ogi:type .
+
+ogi:AEmonthly_dsd qb:component _:node1bmhbsnhsx6 .
+
+ogi:average_earnings_monthly dbpedia-owl:originalName "Average_earnings_monthly_EUR" .

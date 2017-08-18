@@ -1,0 +1,168 @@
+@prefix dccs: <http://data.gmdsp.org.uk/data/example/stats/dccs/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ds: <http://data.gmdsp.org.uk/data/example/stats/dataset/> .
+@prefix ogi: <http://www.opengovintelligence.eu/pilots#> .
+@prefix qb: <http://purl.org/linked-data/cube#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix prop: <http://data.gmdsp.org.uk/data/example/stats/prop/> .
+@prefix sdmx-concept: <http://purl.org/linked-data/sdmx/2009/concept#> .
+@prefix scovo: <http://purl.org/NET/scovo#> .
+@prefix sdmx-attribute: <http://purl.org/linked-data/sdmx/2009/attribute#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix admingeo: <http://data.ordnancesurvey.co.uk/ontology/admingeo/> .
+@prefix sdmx-dimension: <http://purl.org/linked-data/sdmx/2009/dimension#> .
+@prefix sdmx-subject: <http://purl.org/linked-data/sdmx/2009/subject#> .
+@prefix sdmx-metadata: <http://purl.org/linked-data/sdmx/2009/metadata#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix dbpedia-owl: <http://dbpedia.org/ontology/> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix sdmx-measure: <http://purl.org/linked-data/sdmx/2009/measure#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sdmx-code: <http://purl.org/linked-data/sdmx/2009/code#> .
+@prefix interval: <http://reference.data.gov.uk/def/intervals/> .
+
+
+ogi:time a qb:ComponentProperty , qb:DimensionProperty , <http://purl.oclc.org/NET/ssnx/ssn#observationResultTime> ;
+	rdfs:label "Time"@en ;
+	rdfs:range xsd:time .
+
+ogi:IrishNationalTideGaugeNetwork_dsd a qb:DataStructureDefinition .
+
+_:node1bmhb0ntmx1 qb:dimension ogi:latitude .
+
+ogi:IrishNationalTideGaugeNetwork_dsd qb:component _:node1bmhb0ntmx1 .
+
+ogi:IrishNationalTideGaugeNetwork_ds a qb:DataSet ;
+	rdfs:label "Irish National Tide Gauge Network"@en ;
+	rdfs:comment "The Irish National Tide Gauge Network is an on-going development involving the Marine Institute and a number of organisations in the public and private sectors to develop a permanent tidal monitoring infrastructure, ultimately consisting of between 35 and 40 stations."@en ;
+	dct:description "https://erddap.marine.ie/erddap/info/IrishNationalTideGaugeNetwork/index.html"@en ;
+	dct:publisher <http://dbpedia.org/resource/Marine_Institute_Ireland> ;
+	dct:subject <http://www.eionet.europa.eu/gemet/concept/5797> ;
+	qb:structure ogi:IrishNationalTideGaugeNetwork_dsd ;
+	dbpedia-owl:organisation <http://dbpedia.org/resource/Marine_Institute_Ireland> ;
+	dbpedia-owl:location <http://dbpedia.org/resource/Galway_Bay> .
+
+ogi:time dbpedia-owl:originalName "time" .
+
+ogi:latitude a qb:ComponentProperty , qb:DimensionProperty , <http://www.w3.org/2003/01/geo/wgs84_pos#lat> ;
+	rdfs:label "Latitude"@en ;
+	rdfs:range xsd:decimal .
+
+_:node1bmhb0ntmx2 qb:dimension ogi:longitude .
+
+ogi:IrishNationalTideGaugeNetwork_dsd qb:component _:node1bmhb0ntmx2 .
+
+ogi:IrishNationalTideGaugeNetwork_ds dct:publisher <http://dbpedia.org/resource/NUI_Galway> ;
+	dct:subject <http://www.eionet.europa.eu/gemet/concept/12586> ;
+	dbpedia-owl:organisation <http://dbpedia.org/resource/NUI_Galway> ;
+	dbpedia-owl:location <https://www.logainm.ie/xml/1165961> .
+
+ogi:altitude dbpedia-owl:originalName "altitude" .
+
+ogi:latitude a <http://vocab.nerc.ac.uk/collection/P07/current/CFSN0600/> .
+
+_:node1bmhb0ntmx3 qb:dimension ogi:station_id .
+
+ogi:IrishNationalTideGaugeNetwork_dsd qb:component _:node1bmhb0ntmx3 .
+
+ogi:IrishNationalTideGaugeNetwork_ds dct:subject <http://www.eionet.europa.eu/gemet/concept/8522> ;
+	dbpedia-owl:organisation <http://dbpedia.org/resource/Department_of_Agriculture%2C_Food_and_the_Marine> ;
+	dbpedia-owl:location <https://www.logainm.ie/xml/100015> .
+
+ogi:latitude dbpedia-owl:originalName "latitude" .
+
+ogi:longitude a qb:ComponentProperty , qb:DimensionProperty , <http://www.w3.org/2003/01/geo/wgs84_pos#long> ;
+	rdfs:label "Longitude"@en ;
+	rdfs:range xsd:decimal .
+
+_:node1bmhb0ntmx4 qb:dimension ogi:time .
+
+ogi:IrishNationalTideGaugeNetwork_dsd qb:component _:node1bmhb0ntmx4 .
+
+ogi:IrishNationalTideGaugeNetwork_ds dct:subject <http://dbpedia.org/resource/Yacht_club> ;
+	dbpedia-owl:organisation <http://dbpedia.org/resource/Department_of_Communications,_Climate_Action_and_Environment> ;
+	dbpedia-owl:location <http://data.geohive.ie/resource/county/2AE19629145313A3E055000000000001> .
+
+ogi:longitude dbpedia-owl:originalName "longitude" ;
+	a <http://vocab.nerc.ac.uk/collection/P07/current/CFSN0554> .
+
+_:node1bmhb0ntmx5 qb:dimension ogi:altitude .
+
+ogi:IrishNationalTideGaugeNetwork_dsd qb:component _:node1bmhb0ntmx5 .
+
+ogi:IrishNationalTideGaugeNetwork_ds dct:subject <http://dbpedia.org/resource/Sailing> ;
+	dbpedia-owl:organisation <http://www.gbsc.ie/> ;
+	dbpedia-owl:location <http://dbpedia.org/resource/County_Galway> .
+
+ogi:station_id dbpedia-owl:originalName "station_id" ;
+	a qb:ComponentProperty , qb:DimensionProperty , <http://vocab.nerc.ac.uk/collection/W02/current/005/> ;
+	rdfs:label "Station"@en ;
+	rdfs:range xsd:string .
+
+_:node1bmhb0ntmx6 qb:measure ogi:qcflag .
+
+ogi:IrishNationalTideGaugeNetwork_dsd qb:component _:node1bmhb0ntmx6 .
+
+ogi:IrishNationalTideGaugeNetwork_ds dct:subject <http://www.eionet.europa.eu/gemet/concept/14615> ;
+	dbpedia-owl:organisation <http://www.galwaycitysailingclub.com/> ;
+	dbpedia-owl:location <http://sws.geonames.org/2962152/> .
+
+ogi:Water_Level dbpedia-owl:originalName "Water_Level" .
+
+ogi:altitude a qb:ComponentProperty , qb:DimensionProperty , <http://www.w3.org/2003/01/geo/wgs84_pos#alt> ;
+	rdfs:label "Latitude"@en ;
+	rdfs:range xsd:decimal .
+
+_:node1bmhb0ntmx7 qb:measure ogi:Water_Level .
+
+ogi:IrishNationalTideGaugeNetwork_dsd qb:component _:node1bmhb0ntmx7 .
+
+ogi:IrishNationalTideGaugeNetwork_ds dct:subject <http://dbpedia.org/resource/Boating> ;
+	dbpedia-owl:organisation <http://www.rusheenbay.com/> ;
+	dbpedia-owl:location <https://www.logainm.ie/xml/1411139> .
+
+ogi:Water_Level_LAT dbpedia-owl:originalName "Water_Level_LAT" .
+
+ogi:altitude a <http://vocab.nerc.ac.uk/collection/P07/current/CFSN0028/> .
+
+_:node1bmhb0ntmx8 qb:measure ogi:Water_Level_LAT .
+
+ogi:IrishNationalTideGaugeNetwork_dsd qb:component _:node1bmhb0ntmx8 .
+
+ogi:IrishNationalTideGaugeNetwork_ds dct:subject <http://www.eionet.europa.eu/gemet/concept/945> ;
+	dbpedia-owl:organisation <http://www.kayakmor.ie/> .
+
+ogi:Water_Level_OD_Malin dbpedia-owl:originalName "Water_Level_OD_Malin" .
+
+ogi:Water_Level a qb:ComponentProperty , qb:MeasureProperty ;
+	rdfs:label "Water Level"@en ;
+	rdfs:range xsd:decimal .
+
+_:node1bmhb0ntmx9 qb:measure ogi:Water_Level_OD_Malin .
+
+ogi:IrishNationalTideGaugeNetwork_dsd qb:component _:node1bmhb0ntmx9 .
+
+ogi:IrishNationalTideGaugeNetwork_ds dct:subject <http://dbpedia.org/resource/Windsurfing> .
+
+ogi:qcflag dbpedia-owl:originalName "qcflag" .
+
+ogi:Water_Level_LAT a qb:ComponentProperty , qb:MeasureProperty ;
+	rdfs:label "Water Level LAT"@en ;
+	rdfs:range xsd:decimal .
+
+ogi:IrishNationalTideGaugeNetwork_ds dct:subject <http://dbpedia.org/resource/Kayaking> .
+
+ogi:Water_Level_OD_Malin a qb:ComponentProperty , qb:MeasureProperty ;
+	rdfs:label "Water Level OD Malin"@en ;
+	rdfs:range xsd:decimal .
+
+ogi:IrishNationalTideGaugeNetwork_ds dct:subject <http://www.eionet.europa.eu/gemet/concept/5055> .
+
+ogi:qcflag a qb:ComponentProperty , qb:MeasureProperty , <https://www.w3.org/2005/Incubator/ssn/ssnx/ssn#qualityOfObservation> ;
+	rdfs:label "Quality Control Flag"@en ;
+	rdfs:range xsd:int .
+
+ogi:IrishNationalTideGaugeNetwork_ds dct:subject <http://dbpedia.org/resource/Regatta> , <http://dbpedia.org/resource/Swimming_(sport)> , <http://www.eionet.europa.eu/gemet/concept/5033> .

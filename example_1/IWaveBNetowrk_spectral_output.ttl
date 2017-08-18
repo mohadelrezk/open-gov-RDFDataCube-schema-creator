@@ -1,0 +1,230 @@
+@prefix dccs: <http://data.gmdsp.org.uk/data/example/stats/dccs/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ds: <http://data.gmdsp.org.uk/data/example/stats/dataset/> .
+@prefix ogi: <http://www.opengovintelligence.eu/pilots#> .
+@prefix qb: <http://purl.org/linked-data/cube#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix prop: <http://data.gmdsp.org.uk/data/example/stats/prop/> .
+@prefix sdmx-concept: <http://purl.org/linked-data/sdmx/2009/concept#> .
+@prefix scovo: <http://purl.org/NET/scovo#> .
+@prefix sdmx-attribute: <http://purl.org/linked-data/sdmx/2009/attribute#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix admingeo: <http://data.ordnancesurvey.co.uk/ontology/admingeo/> .
+@prefix sdmx-dimension: <http://purl.org/linked-data/sdmx/2009/dimension#> .
+@prefix sdmx-subject: <http://purl.org/linked-data/sdmx/2009/subject#> .
+@prefix sdmx-metadata: <http://purl.org/linked-data/sdmx/2009/metadata#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix dbpedia-owl: <http://dbpedia.org/ontology/> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix sdmx-measure: <http://purl.org/linked-data/sdmx/2009/measure#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sdmx-code: <http://purl.org/linked-data/sdmx/2009/code#> .
+@prefix interval: <http://reference.data.gov.uk/def/intervals/> .
+
+
+ogi:buoy_id a qb:ComponentProperty , qb:DimensionProperty , <http://www.w3.org/ns/ssn/Device> ;
+	rdfs:label "Buoy ID"@en ;
+	rdfs:comment "Sensors system measuring observations."@en ;
+	rdfs:range xsd:string .
+
+ogi:IWaveBNetwork_spectral_dsd a qb:DataStructureDefinition .
+
+_:node1bmfdp625x1 qb:dimension ogi:buoy_id .
+
+ogi:IWaveBNetwork_spectral_dsd qb:component _:node1bmfdp625x1 .
+
+ogi:IWaveBNetwork_spectral_ds a qb:DataSet ;
+	rdfs:label "Irish Wave Buoy Network spectral"@en ;
+	rdfs:comment "Wave data monitoring infrastructure for ocean energy research and development."@en ;
+	dct:description "http://www.isde.ie/#/55eb27e0-2fc3-4dab-9963-a99d12402a9e"@en ;
+	dct:publisher <http://dbpedia.org/resource/Marine_Institute_Ireland> ;
+	dct:subject <http://www.eionet.europa.eu/gemet/concept/5797> ;
+	qb:structure ogi:IWaveBNetwork_spectral_dsd ;
+	dbpedia-owl:organisation <http://dbpedia.org/resource/Marine_Institute_Ireland> ;
+	dbpedia-owl:location <http://dbpedia.org/resource/Atlantic_Ocean> .
+
+ogi:buoy_id dbpedia-owl:originalName "buoy_id" .
+
+ogi:EnergyPeriod a qb:ComponentProperty , qb:MeasureProperty ;
+	rdfs:label "Energy Period"@en ;
+	rdfs:range xsd:decimal .
+
+_:node1bmfdp625x2 qb:dimension ogi:latitude .
+
+ogi:IWaveBNetwork_spectral_dsd qb:component _:node1bmfdp625x2 .
+
+ogi:IWaveBNetwork_spectral_ds dct:publisher <http://dbpedia.org/resource/NUI_Galway> ;
+	dct:subject <http://www.eionet.europa.eu/gemet/concept/12586> ;
+	dbpedia-owl:organisation <http://dbpedia.org/resource/NUI_Galway> ;
+	dbpedia-owl:location <http://dbpedia.org/resource/North_Atlantic_(disambiguation)> .
+
+ogi:time dbpedia-owl:originalName "time" .
+
+ogi:latitude a qb:ComponentProperty , qb:DimensionProperty , <http://www.w3.org/2003/01/geo/wgs84_pos#lat> ;
+	rdfs:label "Latitude"@en ;
+	rdfs:range xsd:decimal .
+
+_:node1bmfdp625x3 qb:dimension ogi:longitude .
+
+ogi:IWaveBNetwork_spectral_dsd qb:component _:node1bmfdp625x3 .
+
+ogi:IWaveBNetwork_spectral_ds dct:subject <http://dbpedia.org/resource/Search_and_rescue> ;
+	dbpedia-owl:organisation <http://dbpedia.org/resource/Department_of_Agriculture%2C_Food_and_the_Marine> ;
+	dbpedia-owl:location <http://www.eionet.europa.eu/gemet/concept/5694> .
+
+ogi:latitude dbpedia-owl:originalName "latitude" ;
+	a <http://vocab.nerc.ac.uk/collection/P07/current/CFSN0600/> .
+
+_:node1bmfdp625x4 qb:dimension ogi:station_id .
+
+ogi:IWaveBNetwork_spectral_dsd qb:component _:node1bmfdp625x4 .
+
+ogi:IWaveBNetwork_spectral_ds dct:subject <http://www.eionet.europa.eu/gemet/concept/7126> ;
+	dbpedia-owl:organisation <http://dbpedia.org/resource/Department_of_Communications,_Climate_Action_and_Environment> ;
+	dbpedia-owl:location <http://sws.geonames.org/3411923/> .
+
+ogi:longitude dbpedia-owl:originalName "longitude" ;
+	a qb:ComponentProperty , qb:DimensionProperty , <http://www.w3.org/2003/01/geo/wgs84_pos#long> ;
+	rdfs:label "Longitude"@en ;
+	rdfs:range xsd:decimal .
+
+_:node1bmfdp625x5 qb:dimension ogi:time .
+
+ogi:IWaveBNetwork_spectral_dsd qb:component _:node1bmfdp625x5 .
+
+ogi:IWaveBNetwork_spectral_ds dct:subject <http://www.eionet.europa.eu/gemet/concept/10106> ;
+	dbpedia-owl:organisation <http://dbpedia.org/resource/Irish_Coast_Guard> ;
+	dbpedia-owl:location <http://sws.geonames.org/6295630/> .
+
+ogi:station_id dbpedia-owl:originalName "station_id" .
+
+ogi:longitude a <http://vocab.nerc.ac.uk/collection/P07/current/CFSN0554> .
+
+_:node1bmfdp625x6 qb:measure ogi:EnergyPeriod .
+
+ogi:IWaveBNetwork_spectral_dsd qb:component _:node1bmfdp625x6 .
+
+ogi:IWaveBNetwork_spectral_ds dct:subject <http://www.eionet.europa.eu/gemet/concept/2220> ;
+	dbpedia-owl:organisation <http://dbpedia.org/resource/Royal_National_Lifeboat_Institution> ;
+	dbpedia-owl:location <http://vocab.nerc.ac.uk/collection/C16/current/200/> .
+
+ogi:PeakDirection dbpedia-owl:originalName "PeakDirection" .
+
+ogi:MeanWavePeriod_Tm01 a qb:ComponentProperty , qb:MeasureProperty , <http://vocab.nerc.ac.uk/collection/P07/current/SUM7H3HM/> ;
+	rdfs:label "Mean Wave Period TM01"@en ;
+	rdfs:range xsd:decimal .
+
+_:node1bmfdp625x7 qb:measure ogi:MeanWavePeriod_Tm01 .
+
+ogi:IWaveBNetwork_spectral_dsd qb:component _:node1bmfdp625x7 .
+
+ogi:IWaveBNetwork_spectral_ds dct:subject <http://www.eionet.europa.eu/gemet/concept/25> ;
+	dbpedia-owl:organisation <http://iweda.ie/> ;
+	dbpedia-owl:location <http://vocab.nerc.ac.uk/collection/C16/current/23/> .
+
+ogi:PeakSpread dbpedia-owl:originalName "PeakSpread" .
+
+ogi:MeanWavePeriod_Tm02 a qb:ComponentProperty , qb:MeasureProperty , <http://vocab.nerc.ac.uk/collection/P07/current/SUM7H3HM/> ;
+	rdfs:label "Mean Wave Period TM02"@en ;
+	rdfs:range xsd:decimal .
+
+_:node1bmfdp625x8 qb:measure ogi:MeanWavePeriod_Tm02 .
+
+ogi:IWaveBNetwork_spectral_dsd qb:component _:node1bmfdp625x8 .
+
+ogi:IWaveBNetwork_spectral_ds dct:subject <http://www.eionet.europa.eu/gemet/concept/7659> ;
+	dbpedia-owl:organisation <http://www.mria.ie/> ;
+	dbpedia-owl:location <http://vocab.nerc.ac.uk/collection/C16/current/23a/> .
+
+ogi:SignificantWaveHeight dbpedia-owl:originalName "SignificantWaveHeight" .
+
+ogi:PeakDirection a qb:ComponentProperty , qb:MeasureProperty , <http://mmisw.org/ont/cdip/term/PEAK_DIRECTION.html> ;
+	rdfs:label "Peak Direction"@en ;
+	rdfs:range xsd:decimal .
+
+_:node1bmfdp625x9 qb:measure ogi:PeakDirection .
+
+ogi:IWaveBNetwork_spectral_dsd qb:component _:node1bmfdp625x9 .
+
+ogi:IWaveBNetwork_spectral_ds dct:subject <http://www.eionet.europa.eu/gemet/concept/1528> ;
+	dbpedia-owl:organisation <http://www.seai.ie/> ;
+	dbpedia-owl:location <http://sws.geonames.org/2964178> .
+
+ogi:EnergyPeriod dbpedia-owl:originalName "EnergyPeriod" .
+
+ogi:PeakPeriod a qb:ComponentProperty , qb:MeasureProperty ;
+	rdfs:label "Peak Period"@en ;
+	rdfs:range xsd:decimal .
+
+_:node1bmfdp625x10 qb:measure ogi:PeakPeriod .
+
+ogi:IWaveBNetwork_spectral_dsd qb:component _:node1bmfdp625x10 .
+
+ogi:IWaveBNetwork_spectral_ds dct:subject <http://dbpedia.org/resource/Coast_guard> ;
+	dbpedia-owl:location <http://dbpedia.org/resource/Galway_Bay> .
+
+ogi:MeanWavePeriod_Tm01 dbpedia-owl:originalName "MeanWavePeriod_Tm01" .
+
+ogi:PeakSpread a qb:ComponentProperty , qb:MeasureProperty ;
+	rdfs:label "Peak Spread"@en ;
+	rdfs:range xsd:decimal .
+
+_:node1bmfdp625x11 qb:measure ogi:PeakSpread .
+
+ogi:IWaveBNetwork_spectral_dsd qb:component _:node1bmfdp625x11 .
+
+ogi:IWaveBNetwork_spectral_ds dct:subject <http://www.eionet.europa.eu/gemet/concept/7362> ;
+	dbpedia-owl:location <https://www.logainm.ie/xml/1165961> .
+
+ogi:MeanWavePeriod_Tm02 dbpedia-owl:originalName "MeanWavePeriod_Tm02" .
+
+ogi:SignificantWaveHeight a qb:ComponentProperty , qb:MeasureProperty , <http://mmisw.org/ont/ioos/parameter/significant_wave_height> ;
+	rdfs:label "Significant Wave Height"@en ;
+	rdfs:range xsd:decimal .
+
+_:node1bmfdp625x12 qb:measure ogi:SignificantWaveHeight .
+
+ogi:IWaveBNetwork_spectral_dsd qb:component _:node1bmfdp625x12 .
+
+ogi:IWaveBNetwork_spectral_ds dct:subject <http://www.eionet.europa.eu/gemet/concept/10054> ;
+	dbpedia-owl:location <https://www.logainm.ie/xml/100015> .
+
+ogi:PeakPeriod dbpedia-owl:originalName "PeakPeriod" .
+
+ogi:SignificantWaveHeight a <http://vocab.nerc.ac.uk/collection/P07/current/CFSN0385/> .
+
+ogi:IWaveBNetwork_spectral_ds dct:subject <http://dbpedia.org/resource/Lifeboat_(rescue)> ;
+	dbpedia-owl:location <http://data.geohive.ie/resource/county/2AE19629145313A3E055000000000001> .
+
+ogi:qcflag dbpedia-owl:originalName "qcflag" .
+
+ogi:station_id a qb:ComponentProperty , qb:DimensionProperty , <http://vocab.nerc.ac.uk/collection/W02/current/005/> ;
+	rdfs:label "Station"@en ;
+	rdfs:range xsd:string .
+
+ogi:IWaveBNetwork_spectral_ds dct:subject <http://www.eionet.europa.eu/gemet/concept/2712> ;
+	dbpedia-owl:location <http://dbpedia.org/resource/County_Galway> .
+
+ogi:time a qb:ComponentProperty , qb:DimensionProperty , <http://purl.oclc.org/NET/ssnx/ssn#observationResultTime> ;
+	rdfs:label "Time"@en ;
+	rdfs:range xsd:time .
+
+ogi:IWaveBNetwork_spectral_ds dct:subject <http://www.eionet.europa.eu/gemet/concept/5668> ;
+	dbpedia-owl:location <http://sws.geonames.org/2961388> .
+
+ogi:qcflag a qb:ComponentProperty , qb:MeasureProperty , <https://www.w3.org/2005/Incubator/ssn/ssnx/ssn#qualityOfObservation> ;
+	rdfs:label "Quality Control Flag"@en ;
+	rdfs:range xsd:int .
+
+ogi:IWaveBNetwork_spectral_ds dct:subject <http://www.eionet.europa.eu/gemet/concept/5677> ;
+	dbpedia-owl:location <http://dbpedia.org/resource/An_Spideal> ;
+	dct:subject <http://www.eionet.europa.eu/gemet/concept/7107> ;
+	dbpedia-owl:location <https://www.logainm.ie/xml/18722> ;
+	dct:subject <http://dbpedia.org/resource/Marine_energy> ;
+	dbpedia-owl:location <http://sws.geonames.org/2962152/> ;
+	dct:subject <http://www.eionet.europa.eu/gemet/concept/9259> ;
+	dbpedia-owl:location <https://www.logainm.ie/xml/1411139> ;
+	dct:subject <http://dbpedia.org/resource/Wave_power> , <http://www.eionet.europa.eu/gemet/concept/2738> , <http://www.eionet.europa.eu/gemet/concept/2718> , <http://www.eionet.europa.eu/gemet/concept/2601> , <http://www.eionet.europa.eu/gemet/concept/2747> , <http://www.eionet.europa.eu/gemet/concept/2748> , <http://www.eionet.europa.eu/gemet/concept/13213> , <http://www.eionet.europa.eu/gemet/concept/7525> , <http://www.eionet.europa.eu/gemet/concept/12171> , <http://www.eionet.europa.eu/gemet/concept/7495> , <http://www.eionet.europa.eu/gemet/concept/11958> , <http://www.eionet.europa.eu/gemet/concept/8475> , <http://dbpedia.org/page/Tidal_power> .

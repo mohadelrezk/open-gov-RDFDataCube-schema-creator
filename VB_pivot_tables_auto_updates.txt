@@ -1,0 +1,1 @@
+Private Sub Worksheet_Change(ByVal Target As Range)  ActiveWorkbook.Worksheets("Lists").PivotTables("PivotTable1").PivotCache.Refresh  ActiveWorkbook.Worksheets("Lists").PivotTables("PivotTable2").PivotCache.RefreshEnd Sub
