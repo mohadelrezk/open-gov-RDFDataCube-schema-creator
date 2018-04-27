@@ -26,7 +26,9 @@ Installation
 1. Download/Open/Run Open Refine (http://openrefine.org/)
 2. Add the RDF Extension to Refine (http://refine.deri.ie/)
 
-** Use latest version => https://github.com/fadmaa/grefine-rdf-extension/releases/tag/v0.9.0
+** Use latest version =>
+ 
+ https://github.com/fadmaa/grefine-rdf-extension/releases/tag/v0.9.0
 
 
 Usage
@@ -47,6 +49,8 @@ Done !
 Help
 --------
 Consult example folders for details on how to fill the spreadsheet. 
+
+
 
 
 ---------------------

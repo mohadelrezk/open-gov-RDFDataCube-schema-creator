@@ -1,0 +1,105 @@
+@prefix dccs: <http://data.gmdsp.org.uk/data/example/stats/dccs/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ds: <http://data.gmdsp.org.uk/data/example/stats/dataset/> .
+@prefix ogi: <http://www.opengovintelligence.eu/pilots#> .
+@prefix qb: <http://purl.org/linked-data/cube#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix prop: <http://data.gmdsp.org.uk/data/example/stats/prop/> .
+@prefix sdmx-concept: <http://purl.org/linked-data/sdmx/2009/concept#> .
+@prefix scovo: <http://purl.org/NET/scovo#> .
+@prefix sdmx-attribute: <http://purl.org/linked-data/sdmx/2009/attribute#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix admingeo: <http://data.ordnancesurvey.co.uk/ontology/admingeo/> .
+@prefix sdmx-dimension: <http://purl.org/linked-data/sdmx/2009/dimension#> .
+@prefix sdmx-subject: <http://purl.org/linked-data/sdmx/2009/subject#> .
+@prefix sdmx-metadata: <http://purl.org/linked-data/sdmx/2009/metadata#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix dbpedia-owl: <http://dbpedia.org/ontology/> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix sdmx-measure: <http://purl.org/linked-data/sdmx/2009/measure#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sdmx-code: <http://purl.org/linked-data/sdmx/2009/code#> .
+@prefix interval: <http://reference.data.gov.uk/def/intervals/> .
+
+
+ogi:refPeriod a qb:ComponentProperty , qb:DimensionProperty , sdmx-dimension:refPeriod ;
+	rdfs:label "Period"@en ;
+	rdfs:range xsd:gYear .
+
+ogi:RPBYmunicipality_dsd a qb:DataStructureDefinition .
+
+_:node1bmhb8vp6x1 qb:dimension ogi:refPeriod .
+
+ogi:RPBYmunicipality_dsd qb:component _:node1bmhb8vp6x1 .
+
+ogi:RPBYmunicipality_ds a qb:DataSet ;
+	rdfs:label "LT: Resident Population at The Beginning of the Year By Municipality"@en ;
+	dct:publisher <http://dbpedia.org/page/Enterprise_Lithuania> ;
+	qb:structure ogi:RPBYmunicipality_dsd ;
+	dbpedia-owl:organisation <http://dbpedia.org/page/Enterprise_Lithuania> ;
+	dbpedia-owl:location <http://dbpedia.org/page/Lithuania> .
+
+ogi:refPeriod dbpedia-owl:originalName "Time_period" .
+
+ogi:country-name a qb:ComponentProperty , qb:DimensionProperty , <http://www.w3.org/2006/vcard/ns#country-name> ;
+	rdfs:label "Country"@en ;
+	rdfs:range xsd:string .
+
+_:node1bmhb8vp6x2 qb:dimension ogi:country-name .
+
+ogi:RPBYmunicipality_dsd qb:component _:node1bmhb8vp6x2 .
+
+ogi:country-name dbpedia-owl:originalName "Country" .
+
+ogi:county a qb:ComponentProperty , qb:DimensionProperty , <http://www.wikipediaontology.org/infobox/county> ;
+	rdfs:label "County"@en ;
+	rdfs:range xsd:string .
+
+_:node1bmhb8vp6x3 qb:dimension ogi:county .
+
+ogi:RPBYmunicipality_dsd qb:component _:node1bmhb8vp6x3 .
+
+ogi:county dbpedia-owl:originalName "County" .
+
+ogi:municipality a qb:ComponentProperty , qb:DimensionProperty , <http://id.dbpedia.org/property/municipality> ;
+	rdfs:label "Municipality"@en ;
+	rdfs:range xsd:string .
+
+_:node1bmhb8vp6x4 qb:dimension ogi:municipality .
+
+ogi:RPBYmunicipality_dsd qb:component _:node1bmhb8vp6x4 .
+
+ogi:municipality dbpedia-owl:originalName "Municipality" .
+
+ogi:age a qb:ComponentProperty , qb:DimensionProperty , <http://statistics.gov.scot/def/dimension/age> ;
+	rdfs:label "Age"@en ;
+	rdfs:range xsd:int .
+
+_:node1bmhb8vp6x5 qb:dimension ogi:age .
+
+ogi:RPBYmunicipality_dsd qb:component _:node1bmhb8vp6x5 .
+
+ogi:age dbpedia-owl:originalName "Age" .
+
+ogi:gender a qb:ComponentProperty , qb:DimensionProperty , <http://statistics.gov.scot/def/dimension/gender> ;
+	rdfs:label "Gender"@en ;
+	rdfs:range xsd:string .
+
+_:node1bmhb8vp6x6 qb:dimension ogi:gender .
+
+ogi:RPBYmunicipality_dsd qb:component _:node1bmhb8vp6x6 .
+
+ogi:gender dbpedia-owl:originalName "Sex" .
+
+ogi:resident_population_at_the_beginning_of_the_year a qb:ComponentProperty , qb:MeasureProperty ;
+	rdfs:label "Resident Population at The Beginning of the Year"@en ;
+	rdfs:range xsd:decimal .
+
+_:node1bmhb8vp6x7 qb:measure ogi:resident_population_at_the_beginning_of_the_year .
+
+ogi:RPBYmunicipality_dsd qb:component _:node1bmhb8vp6x7 .
+
+ogi:resident_population_at_the_beginning_of_the_year dbpedia-owl:originalName "Resident_population_at_the_beginning_of_the_year_persons" .

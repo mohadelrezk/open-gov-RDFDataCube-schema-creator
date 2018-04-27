@@ -1,0 +1,201 @@
+@prefix dccs: <http://data.gmdsp.org.uk/data/example/stats/dccs/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ds: <http://data.gmdsp.org.uk/data/example/stats/dataset/> .
+@prefix ogi: <http://www.opengovintelligence.eu/pilots#> .
+@prefix qb: <http://purl.org/linked-data/cube#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix prop: <http://data.gmdsp.org.uk/data/example/stats/prop/> .
+@prefix sdmx-concept: <http://purl.org/linked-data/sdmx/2009/concept#> .
+@prefix scovo: <http://purl.org/NET/scovo#> .
+@prefix sdmx-attribute: <http://purl.org/linked-data/sdmx/2009/attribute#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix admingeo: <http://data.ordnancesurvey.co.uk/ontology/admingeo/> .
+@prefix sdmx-dimension: <http://purl.org/linked-data/sdmx/2009/dimension#> .
+@prefix sdmx-subject: <http://purl.org/linked-data/sdmx/2009/subject#> .
+@prefix sdmx-metadata: <http://purl.org/linked-data/sdmx/2009/metadata#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix dbpedia-owl: <http://dbpedia.org/ontology/> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix sdmx-measure: <http://purl.org/linked-data/sdmx/2009/measure#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sdmx-code: <http://purl.org/linked-data/sdmx/2009/code#> .
+@prefix interval: <http://reference.data.gov.uk/def/intervals/> .
+
+
+ogi:latitude a qb:ComponentProperty , qb:DimensionProperty , <http://www.w3.org/2003/01/geo/wgs84_pos#lat> ;
+	rdfs:label "Latitude"@en ;
+	rdfs:range xsd:decimal .
+
+ogi:IWBNetwork_dsd a qb:DataStructureDefinition .
+
+_:node1bmhb3u8ex1 qb:dimension ogi:latitude .
+
+ogi:IWBNetwork_dsd qb:component _:node1bmhb3u8ex1 .
+
+ogi:IWBNetwork_ds a qb:DataSet ;
+	rdfs:label "Irish Weather Buoy Network "@en ;
+	rdfs:comment "Meteorological and oceanographic data collection for predictive forecasting of conditions at sea."@en ;
+	dct:description "http://www.isde.ie/#/464864ce-319b-4645-b4c9-f408d656fd76"@en ;
+	dct:publisher <http://dbpedia.org/resource/Marine_Institute_Ireland> ;
+	dct:subject <http://www.eionet.europa.eu/gemet/concept/5797> ;
+	qb:structure ogi:IWBNetwork_dsd ;
+	dbpedia-owl:organisation <http://dbpedia.org/resource/Marine_Institute_Ireland> ;
+	dbpedia-owl:location <http://dbpedia.org/resource/Atlantic_Ocean> .
+
+ogi:station_id dbpedia-owl:originalName "station_id" .
+
+ogi:latitude a <http://vocab.nerc.ac.uk/collection/P07/current/CFSN0600/> .
+
+_:node1bmhb3u8ex2 qb:dimension ogi:longitude .
+
+ogi:IWBNetwork_dsd qb:component _:node1bmhb3u8ex2 .
+
+ogi:IWBNetwork_ds dct:publisher <http://dbpedia.org/resource/NUI_Galway> ;
+	dct:subject <http://www.eionet.europa.eu/gemet/concept/12586> ;
+	dbpedia-owl:organisation <http://dbpedia.org/resource/NUI_Galway> ;
+	dbpedia-owl:location <http://dbpedia.org/resource/North_Atlantic_(disambiguation)> .
+
+ogi:longitude dbpedia-owl:originalName "longitude" ;
+	a qb:ComponentProperty , qb:DimensionProperty , <http://www.w3.org/2003/01/geo/wgs84_pos#long> ;
+	rdfs:label "Longitude"@en ;
+	rdfs:range xsd:decimal .
+
+_:node1bmhb3u8ex3 qb:dimension ogi:station_id .
+
+ogi:IWBNetwork_dsd qb:component _:node1bmhb3u8ex3 .
+
+ogi:IWBNetwork_ds dct:subject <http://www.eionet.europa.eu/gemet/concept/8522> ;
+	dbpedia-owl:organisation <http://dbpedia.org/resource/Department_of_Agriculture%2C_Food_and_the_Marine> ;
+	dbpedia-owl:location <http://www.eionet.europa.eu/gemet/concept/5694> .
+
+ogi:latitude dbpedia-owl:originalName "latitude" .
+
+ogi:longitude a <http://vocab.nerc.ac.uk/collection/P07/current/CFSN0554> .
+
+_:node1bmhb3u8ex4 qb:dimension ogi:time .
+
+ogi:IWBNetwork_dsd qb:component _:node1bmhb3u8ex4 .
+
+ogi:IWBNetwork_ds dct:subject <http://dbpedia.org/resource/Yacht_club> ;
+	dbpedia-owl:organisation <http://dbpedia.org/resource/Department_of_Communications,_Climate_Action_and_Environment> ;
+	dbpedia-owl:location <http://sws.geonames.org/3411923/> .
+
+ogi:time dbpedia-owl:originalName "time" ;
+	a qb:ComponentProperty , qb:DimensionProperty , <http://purl.oclc.org/NET/ssnx/ssn#observationResultTime> ;
+	rdfs:label "Time"@en ;
+	rdfs:range xsd:time .
+
+_:node1bmhb3u8ex5 qb:measure ogi:QC_Flag .
+
+ogi:IWBNetwork_dsd qb:component _:node1bmhb3u8ex5 .
+
+ogi:IWBNetwork_ds dct:subject <http://dbpedia.org/resource/Sailing> ;
+	dbpedia-owl:organisation <http://www.gbsc.ie/> ;
+	dbpedia-owl:location <http://sws.geonames.org/6295630/> .
+
+ogi:AtmosphericPressure dbpedia-owl:originalName "AtmosphericPressure" .
+
+ogi:station_id a qb:ComponentProperty , qb:DimensionProperty , <http://vocab.nerc.ac.uk/collection/W02/current/005/> ;
+	rdfs:label "Station"@en ;
+	rdfs:range xsd:string .
+
+_:node1bmhb3u8ex6 qb:measure ogi:AtmosphericPressure .
+
+ogi:IWBNetwork_dsd qb:component _:node1bmhb3u8ex6 .
+
+ogi:IWBNetwork_ds dct:subject <http://www.eionet.europa.eu/gemet/concept/14615> ;
+	dbpedia-owl:organisation <http://www.galwaycitysailingclub.com/> ;
+	dbpedia-owl:location <http://vocab.nerc.ac.uk/collection/C16/current/200/> .
+
+ogi:WindDirection dbpedia-owl:originalName "WindDirection" .
+
+ogi:AtmosphericPressure a qb:ComponentProperty , qb:MeasureProperty , <http://dbpedia.org/resource/Atmospheric_pressure> ;
+	rdfs:label "Atmospheric Pressure"@en ;
+	rdfs:range xsd:decimal .
+
+_:node1bmhb3u8ex7 qb:measure ogi:WindDirection .
+
+ogi:IWBNetwork_dsd qb:component _:node1bmhb3u8ex7 .
+
+ogi:IWBNetwork_ds dct:subject <http://dbpedia.org/resource/Boating> ;
+	dbpedia-owl:organisation <http://www.rusheenbay.com/> ;
+	dbpedia-owl:location <http://vocab.nerc.ac.uk/collection/C16/current/23/> .
+
+ogi:WindSpeed dbpedia-owl:originalName "WindSpeed" .
+
+ogi:WindDirection a qb:ComponentProperty , qb:MeasureProperty , <http://vocab.nerc.ac.uk/collection/P07/current/CFSN0036/> ;
+	rdfs:label "Wind Direction"@en ;
+	rdfs:range xsd:decimal .
+
+_:node1bmhb3u8ex8 qb:measure ogi:WindSpeed .
+
+ogi:IWBNetwork_dsd qb:component _:node1bmhb3u8ex8 .
+
+ogi:IWBNetwork_ds dct:subject <http://www.eionet.europa.eu/gemet/concept/945> ;
+	dbpedia-owl:organisation <http://www.kayakmor.ie/> ;
+	dbpedia-owl:location <http://vocab.nerc.ac.uk/collection/C16/current/23a/> .
+
+ogi:Gust dbpedia-owl:originalName "Gust" .
+
+ogi:WindSpeed a qb:ComponentProperty , qb:MeasureProperty , <http://vocab.nerc.ac.uk/collection/P07/current/CFSN0038/> ;
+	rdfs:label "Wind Speed"@en ;
+	rdfs:range xsd:decimal .
+
+_:node1bmhb3u8ex9 qb:measure ogi:Gust .
+
+ogi:IWBNetwork_dsd qb:component _:node1bmhb3u8ex9 .
+
+ogi:IWBNetwork_ds dct:subject <http://dbpedia.org/resource/Windsurfing> .
+
+ogi:Gust a qb:ComponentProperty , qb:MeasureProperty , <http://vocab.nerc.ac.uk/collection/P07/current/CFSN0039/> ;
+	rdfs:label "Gust"@en ;
+	rdfs:range xsd:decimal .
+
+_:node1bmhb3u8ex10 qb:measure ogi:AirTemperature .
+
+ogi:IWBNetwork_dsd qb:component _:node1bmhb3u8ex10 .
+
+ogi:IWBNetwork_ds dct:subject <http://dbpedia.org/resource/Kayaking> .
+
+ogi:AirTemperature a qb:ComponentProperty , qb:MeasureProperty , <http://vocab.nerc.ac.uk/collection/P07/current/CFSN0023/> ;
+	rdfs:label "Air Temperature"@en ;
+	rdfs:range xsd:decimal .
+
+_:node1bmhb3u8ex11 qb:measure ogi:DewPoint .
+
+ogi:IWBNetwork_dsd qb:component _:node1bmhb3u8ex11 .
+
+ogi:IWBNetwork_ds dct:subject <http://www.eionet.europa.eu/gemet/concept/5055> .
+
+ogi:DewPoint a qb:ComponentProperty , qb:MeasureProperty ;
+	rdfs:label "Dew Point"@en ;
+	rdfs:range xsd:decimal .
+
+_:node1bmhb3u8ex12 qb:measure ogi:RelativeHumidity .
+
+ogi:IWBNetwork_dsd qb:component _:node1bmhb3u8ex12 .
+
+ogi:IWBNetwork_ds dct:subject <http://dbpedia.org/resource/Regatta> .
+
+ogi:RelativeHumidity a qb:ComponentProperty , qb:MeasureProperty ;
+	rdfs:label "Relative Humidity"@en ;
+	rdfs:range xsd:decimal .
+
+ogi:IWBNetwork_ds dct:subject <http://dbpedia.org/resource/Swimming_(sport)> .
+
+ogi:AirTemperature dbpedia-owl:originalName "AirTemperature" .
+
+ogi:qcflag a qb:ComponentProperty , qb:MeasureProperty , <https://www.w3.org/2005/Incubator/ssn/ssnx/ssn#qualityOfObservation> ;
+	rdfs:label "Quality Control Flag"@en ;
+	rdfs:range xsd:int .
+
+ogi:IWBNetwork_ds dct:subject <http://www.eionet.europa.eu/gemet/concept/5033> .
+
+ogi:DewPoint dbpedia-owl:originalName "DewPoint" .
+
+ogi:RelativeHumidity dbpedia-owl:originalName "RelativeHumidity" .
+
+ogi:QC_Flag dbpedia-owl:originalName "QC_Flag" .

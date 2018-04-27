@@ -1,0 +1,95 @@
+@prefix dccs: <http://data.gmdsp.org.uk/data/example/stats/dccs/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ds: <http://data.gmdsp.org.uk/data/example/stats/dataset/> .
+@prefix ogi: <http://www.opengovintelligence.eu/pilots#> .
+@prefix qb: <http://purl.org/linked-data/cube#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix prop: <http://data.gmdsp.org.uk/data/example/stats/prop/> .
+@prefix sdmx-concept: <http://purl.org/linked-data/sdmx/2009/concept#> .
+@prefix scovo: <http://purl.org/NET/scovo#> .
+@prefix sdmx-attribute: <http://purl.org/linked-data/sdmx/2009/attribute#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix admingeo: <http://data.ordnancesurvey.co.uk/ontology/admingeo/> .
+@prefix sdmx-dimension: <http://purl.org/linked-data/sdmx/2009/dimension#> .
+@prefix sdmx-subject: <http://purl.org/linked-data/sdmx/2009/subject#> .
+@prefix sdmx-metadata: <http://purl.org/linked-data/sdmx/2009/metadata#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix dbpedia-owl: <http://dbpedia.org/ontology/> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix sdmx-measure: <http://purl.org/linked-data/sdmx/2009/measure#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sdmx-code: <http://purl.org/linked-data/sdmx/2009/code#> .
+@prefix interval: <http://reference.data.gov.uk/def/intervals/> .
+
+
+ogi:refPeriod a qb:ComponentProperty , qb:DimensionProperty , sdmx-dimension:refPeriod ;
+	rdfs:label "Period"@en ;
+	rdfs:range xsd:gYear .
+
+ogi:EEPBY_dsd a qb:DataStructureDefinition .
+
+_:node1bmhbdln7x1 qb:dimension ogi:refPeriod .
+
+ogi:EEPBY_dsd qb:component _:node1bmhbdln7x1 .
+
+ogi:EEOBY_ds a qb:DataSet ;
+	rdfs:label "LT: Economic Entities in Operation at the Beginning of the Year"@en ;
+	dct:publisher <http://dbpedia.org/page/Enterprise_Lithuania> ;
+	qb:structure ogi:EEPBY_dsd ;
+	dbpedia-owl:organisation <http://dbpedia.org/page/Enterprise_Lithuania> ;
+	dbpedia-owl:location <http://dbpedia.org/page/Lithuania> .
+
+ogi:refPeriod dbpedia-owl:originalName "Time_period" .
+
+ogi:country-name a qb:ComponentProperty , qb:DimensionProperty , <http://www.w3.org/2006/vcard/ns#country-name> ;
+	rdfs:label "Country"@en ;
+	rdfs:range xsd:string .
+
+_:node1bmhbdln7x2 qb:dimension ogi:country-name .
+
+ogi:EEPBY_dsd qb:component _:node1bmhbdln7x2 .
+
+ogi:country-name dbpedia-owl:originalName "Country" .
+
+ogi:county a qb:ComponentProperty , qb:DimensionProperty , <http://www.wikipediaontology.org/infobox/county> ;
+	rdfs:label "County"@en ;
+	rdfs:range xsd:string .
+
+_:node1bmhbdln7x3 qb:dimension ogi:county .
+
+ogi:EEPBY_dsd qb:component _:node1bmhbdln7x3 .
+
+ogi:county dbpedia-owl:originalName "County" .
+
+ogi:municipality a qb:ComponentProperty , qb:DimensionProperty , <http://id.dbpedia.org/property/municipality> ;
+	rdfs:label "Municipality"@en ;
+	rdfs:range xsd:string .
+
+_:node1bmhbdln7x4 qb:dimension ogi:municipality .
+
+ogi:EEPBY_dsd qb:component _:node1bmhbdln7x4 .
+
+ogi:municipality dbpedia-owl:originalName "Municipality" .
+
+ogi:employee_number a qb:ComponentProperty , qb:DimensionProperty ;
+	rdfs:label "Emplyees"@en ;
+	rdfs:range xsd:decimal .
+
+_:node1bmhbdln7x5 qb:dimension ogi:employee_number .
+
+ogi:EEPBY_dsd qb:component _:node1bmhbdln7x5 .
+
+ogi:employee_number dbpedia-owl:originalName "employee_number" .
+
+ogi:economic_entities_in_operation_at_the_beginning_of_the_year a qb:ComponentProperty , qb:MeasureProperty ;
+	rdfs:label "Economic Entities in Operation at the Beginning of the Year"@en ;
+	rdfs:range xsd:decimal .
+
+_:node1bmhbdln7x6 qb:measure ogi:economic_entities_in_operation_at_the_beginning_of_the_year .
+
+ogi:EEPBY_dsd qb:component _:node1bmhbdln7x6 .
+
+ogi:economic_entities_in_operation_at_the_beginning_of_the_year dbpedia-owl:originalName "Economic_entities_in_operation_at_the_beginning_of_the_year_units" .
